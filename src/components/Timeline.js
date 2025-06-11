@@ -6,5 +6,11 @@ export function addPost(text, latitude, longitude) {
     postElement.innerHTML = 
         `<p>${text}</p>
         <p>Координаты: ${latitude}, ${longitude}</p>`;
+    
+    // Добавляем обработчик события клика
+    postElement.addEventListener('click', () => {
+        alert("Вы кликнули на пост: ${text}");
+    });
+
     timeline.prepend(postElement);
 }
